@@ -1,5 +1,6 @@
 import random
 from datetime import datetime
+import sys  # Importação necessária para finalizar o programa
 
 # Lista de frases motivacionais
 frases = [
@@ -34,8 +35,9 @@ def exibir_outra_frase():
         if resposta == 's':
             exibir_frase()
         elif resposta == 'n':
-            print("Obrigado por usar o Gerador de Frases Motivacionais. Tenha um ótimo dia!")
-            break
+            print("Obrigado por usar o Gerador de Frases Motivacionais!")
+            print("Lembre-se: a motivação está dentro de você, continue acreditando no seu potencial!")
+            sys.exit()  # Encerra o programa imediatamente
         else:
             print("Por favor, digite 's' para sim ou 'n' para não.")
 
@@ -47,3 +49,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
