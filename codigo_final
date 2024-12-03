@@ -1,0 +1,49 @@
+import random
+from datetime import datetime
+
+# Lista de frases motivacionais
+frases = [
+    "Acredite em si mesmo e todo o resto virá naturalmente.",
+    "O sucesso é a soma de pequenos esforços repetidos dia após dia.",
+    "A única maneira de fazer um ótimo trabalho é amar o que você faz.",
+    "A persistência é o caminho do êxito.",
+    "Não espere. O tempo nunca será justo. Comece agora.",
+    "O único lugar onde o sucesso vem antes do trabalho é no dicionário.",
+    "Se você quer algo que nunca teve, precisa fazer algo que nunca fez.",
+    "Nunca é tarde demais para ser o que você poderia ter sido.",
+    "A maior recompensa do trabalho não é o que você recebe, mas o que você se torna.",
+    "O fracasso é apenas o sucesso tentando ser melhor."
+]
+
+def boas_vindas():
+    nome = input("Qual é o seu nome? ")
+    print(f"Bem-vindo, {nome}, ao Gerador de Frases Motivacionais!")
+    print("Vamos começar o dia com uma boa dose de motivação.")
+
+def exibir_data_hora():
+    agora = datetime.now()
+    print(f"\nData e Hora: {agora.strftime('%d/%m/%Y %H:%M:%S')}")
+
+def exibir_frase():
+    frase = random.choice(frases)
+    print(f"Frase de hoje: {frase}")
+
+def exibir_outra_frase():
+    while True:
+        resposta = input("Deseja ver outra frase? (s/n): ").strip().lower()
+        if resposta == 's':
+            exibir_frase()
+        elif resposta == 'n':
+            print("Obrigado por usar o Gerador de Frases Motivacionais. Tenha um ótimo dia!")
+            break
+        else:
+            print("Por favor, digite 's' para sim ou 'n' para não.")
+
+def main():
+    boas_vindas()
+    exibir_data_hora()
+    exibir_frase()
+    exibir_outra_frase()
+
+if __name__ == "__main__":
+    main()
